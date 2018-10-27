@@ -50,10 +50,28 @@ var bot = new Twit({
 // })
 
 //GET PEOPLE WE FOLLOW
-bot.get('friends/list', {screen_name: 'VotreDlire'}, function(err, data, response){
+// bot.get('friends/list', {screen_name: 'VotreDlire'}, function(err, data, response){
+//   if(err){
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// })
+
+//GIVE US THE RELATION TO A SPECIFIC USER
+// bot.get('friendships/lookup', {screen_name: 'JossDZ'}, function(err, data, response){
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// })
+
+//SEND DIRECT MESSAGE BY PROGRAMMING THE BOT
+bot.post('direct_messages/events/new (message_create)', {screen_name:'JossDz', text: 'Testing Twitter API using twit.js'}, function(err, data, response){
   if(err){
     console.log(err);
-  } else {
+  }else{
     console.log(data);
   }
-})
+});
