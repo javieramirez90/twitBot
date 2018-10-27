@@ -41,8 +41,17 @@ var bot = new Twit({
 
 //FOLLOW PEOPLE BACK (individually)
 //General rule is bot only follows users that follow the bot
-bot.post('friendships/create', {screen_name: 'Donciscone'}, function(err, data, response){
-  if(err) {
+// bot.post('friendships/create', {screen_name: 'Donciscone'}, function(err, data, response){
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// })
+
+//GET PEOPLE WE FOLLOW
+bot.get('friends/list', {screen_name: 'VotreDlire'}, function(err, data, response){
+  if(err){
     console.log(err);
   } else {
     console.log(data);
