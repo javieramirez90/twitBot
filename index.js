@@ -19,12 +19,32 @@ var bot = new Twit({
 //   }
 // });
 
-bot.get('followers/list', {screen_name: 'bots_with_han'}, function(err, data, response){
-  if(err){
-    console.log(err)
+//IDS
+// bot.get('followers/ids', {screen_name: 'bots_with_han'}, function(err, data, response){
+//   if(err){
+//     console.log(err)
+//   } else {
+//     console.log(data);
+//   }
+// });
+
+//LIST PEOPLE THAT FOLLOW US
+// bot.get('followers/list', {screen_name: 'bots_with_han'}, function(err, data, response){
+//   if(err){
+//     console.log(err)
+//   } else {
+//     data.users.forEach(function(user){
+//       console.log(user.screen_name);
+//     });
+//   }
+// });
+
+//FOLLOW PEOPLE BACK (individually)
+//General rule is bot only follows users that follow the bot
+bot.post('friendships/create', {screen_name: 'Donciscone'}, function(err, data, response){
+  if(err) {
+    console.log(err);
   } else {
-    data.users.forEach(function(user){
-      console.log(user.screen_name);
-    });
+    console.log(data);
   }
-});
+})
