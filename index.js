@@ -68,10 +68,23 @@ var bot = new Twit({
 // })
 
 //SEND DIRECT MESSAGE BY PROGRAMMING THE BOT
-bot.post('direct_messages/events/new (message_create)', {screen_name:'JossDz', text: 'Testing Twitter API using twit.js'}, function(err, data, response){
+//I couldn't solve the problem with the API
+// bot.post('direct_messages/events/new', {screen_name:'mabvmex', text: 'Testing Twitter API using twit.js'}, function(err, data, response){
+//   if(err){
+//     console.log(err);
+//   }else{
+//     console.log(data);
+//   }
+// });
+
+//TO SEE TWITS FROM PEOPLE WE ARE FOLLOWING
+bot.get('statuses/home_timeline', {count: 10}, function(err, data, response){
   if(err){
     console.log(err);
   }else{
-    console.log(data);
+    data.forEach(function(d){
+      console.log(d);
+      console.log('\n');
+    });
   }
 });
